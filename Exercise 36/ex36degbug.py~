@@ -1,0 +1,47 @@
+# Learn Python The Hard Way - Exercise 36 Homework
+# Copied by Joe Poser
+
+from sys import exit
+
+def nord():
+	print "The guard says \"So you are a Nord, you should no better than to challenge the might of the Empi.....\""
+	print "Before the guard could finish his taunt, a massive winged drake descends from above disrupting the execution. In the confusion you escape"
+	print "However on running for cover you encounter the dragon, standing on it's hind legs between you and the door"
+	print "\n Do you attack the massive lizard head on, try and cast a spell of dragon-cide or attempt to sneak past it?"
+
+	action = raw_input("> ")
+	
+	if "attack" in action:
+		keep(nord)
+	elif "cast" in action:
+		dead("You wave your hand's around like a lion doing the Mick Jagger until your realise your a Nord and therefor hate magic. The dragon swats you like a lion dancing the Mick Jagger."
+	else:
+		dead("Dragons don't allow for deviance.")
+
+def dead(x):
+	comment = x
+	print "%s - So it goes." % (comment)
+
+# This is the start of the adventure, there is an easter egg if the player types Dhovakiin!
+def helgen():
+	print "The guard asks if you are a Nord or an Elf under your hood?"
+
+	player = raw_input("> ")
+
+	if player == "Nord":
+		nord()
+	elif player == "Elf":
+		elf()
+	elif player == "Dhovakiin":
+		dead("The guard says \"He's obviously mad, execute him!\"")
+	else:
+		print "The guard comments \"You don't look like a %s, be honest with me.\"" % (player)
+
+		helgen()
+
+print "You have been captured by the Imperial Legion."
+print "You have been brought on a cart to Helgen."
+print "You are thought to be a member of the Stormcloak rebellion,"
+print "and you are to be executed..."
+
+helgen()

@@ -1,0 +1,18 @@
+# Learn Python The Hardway - Exercise 37 Study Drill 1
+# Written by JPoser
+
+from sys import argv
+
+fun = argv
+
+def super_fun():
+
+    if fun is fun:
+        print "Woo-hoo!"
+    elif fun is not fun:
+        print "boo"
+    else:
+        print "what?"
+
+super_fun()
+
