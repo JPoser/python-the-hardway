@@ -1,0 +1,12 @@
+* Map - Handles the order the player runs through the 
+  - next_scene - selects the next scene based on a return value from previous scene
+  - opening_scene - intialises the game on Central Corridor
+* Engine
+  - play
+* Scene
+  - enter
+  * Death
+  * Central Corridor
+  * Laser Weapon Armory
+  * The Bridge
+  * Escape Pod
