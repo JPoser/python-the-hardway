@@ -84,23 +84,23 @@ class TheBridge(Scene):
 		action = raw_input("> ")
 		if "joke" in action:
 			print "You say:"
-			#time.sleep(1)
+			time.sleep(1)
 			print "'What goes Ha Ha Bonk?'"
-			#time.sleep(1)
+			time.sleep(1)
 			print "The Gothon Commander retorts:"
-			#time.sleep(1)
+			time.sleep(1)
 			print "'This is your plan, Ha Ha Ha'"
-			#time.sleep(1)
+			time.sleep(1)
 			print "He raises his blaster"
-			#time.sleep(1)
+			time.sleep(1)
 			print "Realising your mistake, you snap shoot him towards the cranial region"
-			#time.sleep(1)
+			time.sleep(1)
 			print "..."
-			#time.sleep(1)
+			time.sleep(1)
 			print "His head falls off"
-			#time.sleep(1)
+			time.sleep(1)
 			print "..."
-			#time.sleep(1)
+			time.sleep(1)
 			print "'A Gothon laughing his head off' you quip"
 			print "You plant the Neutron bomb and dash towards the Escape Pods"
 			return 'escape_pod'
@@ -113,14 +113,22 @@ class EscapePod(Scene):
 		print "When you arrive all but 1 of the ships escape pods are taken by fleeing Gothons"
 		print "Before leaving the Gothons have sabotaged the indicators showing if a pod has been fired."
 		print "This means if you get the wrong hatch you will be sucked out into space and pop like an overinflated baloon"
-		print "You must choose between escape pod A, B or C"
-		action = raw_input("> ")
-		# To do, santise action so string is always in caps aka CRUISE CONTROL FOR COOL!
-		if action == "A":
+		button_selected = False
+		while button_selected == False:
+			print "You must choose between escape pod A, B or C"
+			valid_actions = ["A", "B", "C"]
+			action = raw_input("> ")
+			cap_action = action.capitalize()
+			if cap_action in valid_actions:
+				button_selected = True
+			else:
+				button_selected = False
+			# To do, santise action so string is always in caps aka CRUISE CONTROL FOR COOL!
+		if cap_action == "A":
 			return 'finished'
-		elif action == "B":
+		elif cap_action == "B":
 			return 'death'
-		elif action == "C":
+		elif cap_action == "C":
 			return 'death'
 		else:
 			return 'death'
