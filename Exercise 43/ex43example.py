@@ -12,7 +12,7 @@ class Engine(object):
 		
 	def play(self):
 		current_scene = self.scene_map.opening_scene()
-		print current_scene
+		#print current_scene
 		last_scene = self.scene_map.next_scene('finished')
 
 		#current_scene.enter()
@@ -44,7 +44,6 @@ class CentralCorridor(Scene):
 		elif "fight" in action:
 			return 'death'
 		elif "hide" in action:
-			print "not Dead"
 			print "The Gothon is blinded by your laser map."
 			print "This gives you a 21 second window to escape."
 			print "you duck a left into the Laz0r Armory.\n\n"
@@ -64,7 +63,6 @@ class LaserWeaponArmory(Scene):
 		while attempts != 0:
 			attempt = raw_input("> ")
 			if attempt == "732":
-				print "sucess"
 				break
 			else:
 				attempts -= 1
@@ -123,8 +121,8 @@ class EscapePod(Scene):
 				button_selected = True
 			else:
 				button_selected = False
-			# To do, santise action so string is always in caps aka CRUISE CONTROL FOR COOL!
 		if cap_action == "A":
+			print "Congratulations you win"
 			return 'finished'
 		elif cap_action == "B":
 			return 'death'
@@ -135,8 +133,8 @@ class EscapePod(Scene):
 
 class Finished(Scene):
 	def enter(self):
-		print "Yay you win!"
-		return 'finished'
+		print "The End"
+		#return 'finished'
 
 class Map(object):
 	scenes = {
