@@ -1,0 +1,7 @@
+Finite state machine notes
+
+A finite state machine is a way of desiging programs that says a system can be any number of states but it can only be one at a time. The state it is at any present moment is called the current state. It stays at this event until it reaches a trigger point at which state it transitions to the next scene.
+
+This is exactly how the text adventure work, each scene is a state and runs until it triggers a transition from the engine. 
+
+They are used for lots of modern appliances such as vending machines (vends an item when a coin is inserted and a choice is made) and escalators (take a user up until it gets to the top, then return to the bottom).
