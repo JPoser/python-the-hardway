@@ -1,0 +1,17 @@
+# Learn Python The Hard Way - Exercise 44a
+# Copied by Joe Poser
+# Implicit inheritance
+
+class Parent(object):
+
+	def implicit(self):
+		print "PARENT implicit()"
+
+class Child(Parent):
+	pass
+
+dad = Parent()
+son = Child()
+
+dad.implicit()
+son.implicit()
