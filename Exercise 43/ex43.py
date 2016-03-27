@@ -1,3 +1,21 @@
+# Learn Python The Hard Way - Exercise 43
+# Modified by Joe Poser
+# Object Oriented Design
+
+# How selecting the next scene works. 
+
+# There are two classes that control the flow of scenes. The Map defines which scene will be slected 
+# next from a dictionary containing strings related to classes. It contains a hard coded variable for the dictionary, an init method 
+# to define the opening scene, a method to get the opening scene from the dictionary and a method for getting the next scene from the dictionary.
+
+# Next_scene() takes two arguments self because it's a class method and scene_name. scene_name gets run against the dictionary as a variable,
+# this then returns the next scene class. Opening scene just calls next_scene with the argument start_scene to get the opening scene.
+
+# The Engine provides the main loop to keep running scenes until it reaches scene finished defined by the variable last_scene which holds
+# the class Finished(). current_scene is set to the opening_scene from the map and then a loop is defined which will keep getting the next scene
+# and running it's method enter() until it reaches the last_scene which is finished.
+
+
 import time
 
 class Scene(object):
@@ -8,17 +26,24 @@ class Scene(object):
 class Engine(object):
 
 	def __init__(self, scene_map):
-		game_map = scene_map
-		game_map.opening_scene()
-		game_map.next_scene()
-
+		self.scene_map = scene_map
+		
 	def play(self):
-		pass
+		current_scene = self.scene_map.opening_scene()
+		last_scene = self.scene_map.next_scene('finished')
+
+		while current_scene != last_scene:
+			next_scene_name = current_scene.enter()
+			current_scene = self.scene_map.next_scene(next_scene_name)
+
+		current_scene.enter()
+
 
 class Death(Scene):
 
 	def enter(self):
 		print "You are dead, so it goes."
+		return 'finished'
 
 class CentralCorridor(Scene):
 
@@ -30,20 +55,16 @@ class CentralCorridor(Scene):
 		print "what do you do?"
 		action = raw_input("> ")
 		if "joke" in action:
-			print "Dead1"
+			return 'death'
 		elif "fight" in action:
-			print "dead2"
+			return 'death'
 		elif "hide" in action:
-			print "not Dead"
-			self.hidden()
+			print "The Gothon is blinded by your laser map."
+			print "This gives you a 21 second window to escape."
+			print "you duck a left into the Laz0r Armory.\n\n"
+			return "laser_weapon_armory"
 		else:
-			print "Dead3"
-	
-	def hidden(self):
-		print "The Gothon is blinded by your laser map."
-		print "This gives you a 21 second window to escape."
-		print "you duck a left into the Laz0r Armory.\n\n"
-		return "laser_weapon_armory"
+			return 'death'
 
 class LaserWeaponArmory(Scene):
 
@@ -57,16 +78,13 @@ class LaserWeaponArmory(Scene):
 		while attempts != 0:
 			attempt = raw_input("> ")
 			if attempt == "732":
-				print "sucess"
 				break
 			else:
 				attempts -= 1
 		if attempts == 0:
-			print "DEBUG: Dead"
+			return 'death'
 		else:
-			print "NEXT LEVEL"
-			next_level = TheBridge()
-			next_level.enter()
+			return 'the_bridge'
 
 class TheBridge(Scene):
 
@@ -79,29 +97,28 @@ class TheBridge(Scene):
 		action = raw_input("> ")
 		if "joke" in action:
 			print "You say:"
-			#time.sleep(1)
+			time.sleep(1)
 			print "'What goes Ha Ha Bonk?'"
-			#time.sleep(1)
+			time.sleep(1)
 			print "The Gothon Commander retorts:"
-			#time.sleep(1)
+			time.sleep(1)
 			print "'This is your plan, Ha Ha Ha'"
-			#time.sleep(1)
+			time.sleep(1)
 			print "He raises his blaster"
-			#time.sleep(1)
+			time.sleep(1)
 			print "Realising your mistake, you snap shoot him towards the cranial region"
-			#time.sleep(1)
+			time.sleep(1)
 			print "..."
-			#time.sleep(1)
+			time.sleep(1)
 			print "His head falls off"
-			#time.sleep(1)
+			time.sleep(1)
 			print "..."
-			#time.sleep(1)
+			time.sleep(1)
 			print "'A Gothon laughing his head off' you quip"
 			print "You plant the Neutron bomb and dash towards the Escape Pods"
-			next_level = EscapePod()
-			next_level.enter()
+			return 'escape_pod'
 		else:
-			print "debugbridge: DEAD"
+			return 'death'
 
 class EscapePod(Scene):
 
@@ -109,38 +126,54 @@ class EscapePod(Scene):
 		print "When you arrive all but 1 of the ships escape pods are taken by fleeing Gothons"
 		print "Before leaving the Gothons have sabotaged the indicators showing if a pod has been fired."
 		print "This means if you get the wrong hatch you will be sucked out into space and pop like an overinflated baloon"
-		print "You must choose between escape pod A, B or C"
-		action = raw_input("> ")
-		# To do, santise action so string is always in caps aka CRUISE CONTROL FOR COOL!
-		if action == "A":
-			print "Success"
-		elif action == "B":
-			print "Death by vaccum"
-		elif action == "C":
-			print "Death by vaccum"
+		button_selected = False
+		while button_selected == False:
+			print "You must choose between escape pod A, B or C"
+			valid_actions = ["A", "B", "C"]
+			action = raw_input("> ")
+			cap_action = action.capitalize()
+			if cap_action in valid_actions:
+				button_selected = True
+			else:
+				button_selected = False
+		if cap_action == "A":
+			print "Congratulations you win"
+			return 'finished'
+		elif cap_action == "B":
+			return 'death'
+		elif cap_action == "C":
+			return 'death'
 		else:
-			print "Death by Neutron radiation"
+			return 'death'
+
+class Finished(Scene):
+	def enter(self):
+		print "The End"
+		#return 'finished'
 
 class Map(object):
+	scenes = {
+	'central_corridor' : CentralCorridor(),
+	'laser_weapon_armory' : LaserWeaponArmory(),
+	'the_bridge' : TheBridge(),
+	'escape_pod' : EscapePod(),
+	'death' : Death(),
+	'finished' : Finished()
+	}
 
 	def __init__(self, start_scene):
-		start = start_scene
+		self.start_scene = start_scene
 
 	def next_scene(self, scene_name):
-			scene_map = {
-			'central_corridor' : CentralCorridor(),
-			'laser_weapon_armory' : LaserWeaponArmory(),
-			'the_bridge' : TheBridge(),
-			'escape_pod' : EscapePod(),
-			}
-			next_level = scene_map[scene_name]
-			next_level.enter()
+			val = self.scenes.get(scene_name)
+			return val
 
 	def opening_scene(self):
-		self.next_scene('central_corridor')
+		return self.next_scene(self.start_scene)
 		
 		
-
+# Debug code for Map() class
 a_map = Map('central_corridor')
 a_game = Engine(a_map)
 a_game.play()
+
