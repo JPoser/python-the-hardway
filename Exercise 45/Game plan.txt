@@ -1,0 +1,15 @@
+Learn Python The Hardway - Exercise 45 
+Planning a game
+
+Theme: Hard boiled prohibition era detective novel
+Mechanics: Text adventure. Two encounters, one with a crony and one with the moiderer
+How is the next scene selected: returns the next scene and runs open
+Imported function: tailing, one scene involves tailing a perp, the user must guess which street to go down otherwise the car gets away.
+
+Scene one: Man walks into your office with a case, he's being blackmailed and asks you to look into it
+Scene two: Follow trail to blackmailers house find corpse, search for clues - if succesful spot car speeding off
+Scene three: Follow car
+Scene four: Crony encounter
+Scene five: Crony interrogation
+Scene six: Moiderer encounter
+Scene seven: Case closed
