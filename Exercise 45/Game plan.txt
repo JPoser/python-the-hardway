@@ -12,4 +12,9 @@ Scene three: Follow car
 Scene four: Crony encounter
 Scene five: Crony interrogation
 Scene six: Moiderer encounter
-Scene seven: Case closed
+
+
+Win state: Case closed
+
+Case Failure state: Case goes cold
+Encounter failer state: You sleep with the fishes
