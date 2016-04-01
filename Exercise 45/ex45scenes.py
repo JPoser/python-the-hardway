@@ -19,5 +19,39 @@ class House(Section):
 	def start(self):
 		pass
 
+class Trail(Section):
+	"""Section for tailing the perp"""
+	def start(self):
+		pass
+
+class Crony(Section):
+	"""Section for the first encounter with an armed Crony"""
+	def start(self):
+		pass
+		
+class Interrogation(Section):
+	"""Section where you interrogate the perp"""
+	def start(self):
+		pass
+
+class Murderer(Section):
+	"""Final Section where you encounter the Murderer"""
+	def start(self):
+		pass
+
+class CaseClosed(Section):
+	"""Win state"""
+	def start(self):
+		pass
+
+class CaseCold(Section):
+	"""Survival failure state"""
+	def start(self):
+		pass
+
+class Dead(Section):
+	"""Death failure state"""
+	def start(self):
+		pass
 
 		
