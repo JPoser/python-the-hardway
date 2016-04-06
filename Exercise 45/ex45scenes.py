@@ -12,32 +12,38 @@ class Section(object):
 class Office(Section):
 	"""Section for your office and start of the adventure"""
 	def start(self):
-		pass
+		print "In the office"
+		return "house"
 
 class House(Section):
 	"""Section for the blackmailers house"""
 	def start(self):
-		pass
+		print "In the house"
+		return "tail"
 
-class Trail(Section):
+class Tail(Section):
 	"""Section for tailing the perp"""
 	def start(self):
-		pass
+		print "On the tail"
+		return "crony"
 
 class Crony(Section):
 	"""Section for the first encounter with an armed Crony"""
 	def start(self):
-		pass
+		print "Fighting the crony"
+		return "interrogation"
 		
 class Interrogation(Section):
 	"""Section where you interrogate the perp"""
 	def start(self):
-		pass
+		print "Interrogating the crony"
+		return "murderer"
 
 class Murderer(Section):
 	"""Final Section where you encounter the Murderer"""
 	def start(self):
-		pass
+		print "Fighting the murderer"
+		return "caseclosed"
 
 class CaseClosed(Section):
 	"""Win state"""
@@ -53,5 +59,3 @@ class Dead(Section):
 	"""Death failure state"""
 	def start(self):
 		pass
-
-		
