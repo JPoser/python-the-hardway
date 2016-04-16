@@ -1,6 +1,6 @@
 # Learn Python The Hard Way - Exercise 45
 # Written by Joe Poser
-# Classes for scenes
+# Classes for sections
 
 class Section(object):
 	"""Section is the base class for each section of the adventure, 
@@ -48,14 +48,17 @@ class Murderer(Section):
 class CaseClosed(Section):
 	"""Win state"""
 	def start(self):
-		pass
+		print "Case Closed..."
+		exit(1)
 
 class CaseCold(Section):
 	"""Survival failure state"""
 	def start(self):
-		pass
+		print "The trail went cold"
+		exit(1)
 
 class Dead(Section):
 	"""Death failure state"""
 	def start(self):
-		pass
+		print "you died"
+		exit(1)
