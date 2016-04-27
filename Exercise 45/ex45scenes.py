@@ -43,7 +43,7 @@ class Murderer(Section):
 	"""Final Section where you encounter the Murderer"""
 	def start(self):
 		print "Fighting the murderer"
-		return "caseclosed"
+		return "case closed"
 
 class CaseClosed(Section):
 	"""Win state"""
