@@ -27,6 +27,20 @@ class SectionMap(object):
 
 
 class SceneSelector(object):
-	pass
+	
+	def __init__ (self, section_map):
+		self.map = section_map
+
+	def run(self):
+		
+		begin = self.map.first_stage("office")
+		next_one = self.map.next_stage(begin.start())
+		end_states = []
+		while True:
+			and_again = self.map.next_stage(next_one.start())
+		
+
 
 new = SectionMap()
+SELECTOR = SceneSelector(SectionMap())
+SELECTOR.run()
