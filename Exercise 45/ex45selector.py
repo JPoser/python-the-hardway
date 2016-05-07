@@ -32,15 +32,14 @@ class SceneSelector(object):
 		self.map = section_map
 
 	def run(self):
-		
-		begin = self.map.first_stage("office")
-		next_one = self.map.next_stage(begin.start())
-		end_states = []
+		begin = self.map.next_stage(self.map.first_stage("office").start())
+		and_again = self.map.next_stage(begin.start())
+		once_more = self.map.next_stage(and_again.start())
 		while True:
-			and_again = self.map.next_stage(next_one.start())
+			and_again = self.map.next_stage(once_more.start())
+			once_more = self.map.next_stage(and_again.start())	
 		
 
 
-new = SectionMap()
 SELECTOR = SceneSelector(SectionMap())
 SELECTOR.run()
