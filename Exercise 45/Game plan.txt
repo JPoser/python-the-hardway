@@ -7,12 +7,32 @@ How is the next scene selected: returns the next scene and runs open
 Imported function: tailing, one scene involves tailing a perp, the user must guess which street to go down otherwise the car gets away.
 
 
-Scene one: Man walks into your office with a case, he's being blackmailed and asks you to look into it
+Scene one: Woman walks into your office with a case, she's being blackmailed by a man she met in a speakeasy and wants you to take care of it
+	Choice:
+		- Tell her it sounds to much trouble - case cold.
+		- Take the note and learn where the blackmailer lives - house
 Scene two: Follow trail to blackmailers house find corpse, search for clues - if succesful spot car speeding off
+	Choice:
+		- Search the scene - case cold
+		- Follow slamming door - tailing crony
 Scene three: Follow car
+	Mechanic anticipate the direction the car will take from glimpsed cues:
+		Sucess - encounter
+		Failer - case cold
 Scene four: Crony encounter
+	Choice:
+		Talk him down - Dead
+		Shoot - Dead
+		Punch - Interrogation
 Scene five: Crony interrogation
+	Choice:
+		Good cop - case cold
+		Bad cop - Moiderer encounter
 Scene six: Moiderer encounter
+	Choice:
+		Talk him down - Case closed
+		Shoot - Case closed
+		Punch - Dead
 
 
 Win state: Case closed

@@ -16,9 +16,6 @@ class SectionMap(object):
 		"dead" : ex45scenes.Dead(),
 	}
 
-	def __init__ (self):
-		self.first_stage("office")
-
 	def next_stage(self, section_name):
 		return self.sections.get(section_name)
 
@@ -37,9 +34,7 @@ class SceneSelector(object):
 		once_more = self.map.next_stage(and_again.start())
 		while True:
 			and_again = self.map.next_stage(once_more.start())
-			once_more = self.map.next_stage(and_again.start())	
-		
-
+			once_more = self.map.next_stage(and_again.start())
 
 SELECTOR = SceneSelector(SectionMap())
 SELECTOR.run()
