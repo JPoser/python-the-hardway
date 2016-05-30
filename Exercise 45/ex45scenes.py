@@ -18,7 +18,7 @@ class Office(Section):
 		print "'What are you looking for?' I asked."
 		print "'Someone to find out who's blackmailing me' she said."
 		print "She looked like trouble and lots of it."
-		print "I could tell her to get lost now and buy another bottle or take her money."
+		print "I could have told her to get 'lost' now and buy another bottle\nor 'help' her and go after another scumbag despite hundreds of others ready to take his place."
 		action = False
 		while action == False:
 			response = raw_input("> ")
@@ -46,8 +46,26 @@ class Office(Section):
 class House(Section):
 	"""Section for the blackmailers house"""
 	def start(self):
-		print "In the house"
-		return "tail"
+		print "I walked to the office block on the east side of the city."
+		print "The rain lashed my overcoat and soaked me through."
+		print "I stopped to pick up another bottle of scotch and a pack of ciggerates."
+		print "As I walked through the empyty lobby I heard the repetative dull thuds of  gunshots echoing through concrete."
+		print "I ran to the elevator and thumped the button for the floor."
+		print "As the doors opened I saw a door kicked off it's hinges."
+		print "I cautiously walked into the room and found a body slouched over the desk. Blood was dripping off the desk onto the floor."
+		print "Behind me I heard the quick thud of a man running down the hall and down the stairway"
+		print "I could have lingered to 'look' for clues but I had a hunch I'd learn more by giving 'chase' and catching whoever was fleeing the scene and persuading him to tell me what he knew."
+		action = False
+		while action == False:
+			response = raw_input("> ")
+			if "chase" in response:
+				action = True
+				return "tail"
+			elif "look" in response:
+				action = True
+				return "case cold"
+			else:
+				print "That won't help do I 'chase' after the perp or look for clues?"
 
 class Tail(Section):
 	"""Section for tailing the perp"""
