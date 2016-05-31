@@ -13,7 +13,8 @@ class Office(Section):
 	"""Section for your office and start of the adventure"""
 	def start(self):
 		print "I was sat in my office when she walked in,"
-		print "the rain was lashing down like lead in a shoot out."
+		print "she was wearing a red dress."
+		print "The rain was lashing down like hot lead bouncing off concrete."
 		print "I was looking busy flicking through old post, mostly unpaid bills, and had nearly run out of scotch."
 		print "'What are you looking for?' I asked."
 		print "'Someone to find out who's blackmailing me' she said."
@@ -27,6 +28,7 @@ class Office(Section):
 				print "'My costs are fifteen dollars a day' I told her"
 				print "She looked relieved 'Whatever you need, all I have to go on so far are the notes they've been sending me'"
 				print "I took a good look at the notes and recognised the letter head they were sent on."
+				print "It read 'Michael Finnagen, talent agent'. I knew him better as Micky Fin, hustler"
 				print "'I have an idea where these are coming from' I mumbled thinking aloud"
 				print "'Your going to be making me work for my money tonight'"
 				print "I headed east on 45th with the remainders of my scotch and a .38 on a hunch and a prayer"
@@ -53,15 +55,24 @@ class House(Section):
 		print "I ran to the elevator and thumped the button for the floor."
 		print "As the doors opened I saw a door kicked off it's hinges."
 		print "I cautiously walked into the room and found a body slouched over the desk. Blood was dripping off the desk onto the floor."
-		print "Behind me I heard the quick thud of a man running down the hall and down the stairway"
-		print "I could have lingered to 'look' for clues but I had a hunch I'd learn more by giving 'chase' and catching whoever was fleeing the scene and persuading him to tell me what he knew."
+		print "Behind me I heard the quick thud of a man running down the hall and down the stairwell."
+		print "I could have lingered to 'look' for clues but I had a hunch I'd learn more by giving 'chase'\n and catching whoever was fleeing the scene and persuading him to tell me what he knew."
 		action = False
 		while action == False:
 			response = raw_input("> ")
 			if "chase" in response:
+				print "I gave chase down the stairwell. I could hear the perp up aheads footsteps get faster."
+				print "At the bottom of the stairs I saw a man in a brown overcoat jump into a buick and drive away."
+				print "I ran round the corner to my convertable and attempted to tail him."
 				action = True
 				return "tail"
 			elif "look" in response:
+				print "I decided that leaving a crime scene this fresh was a mistake."
+				print "A name badge on the table read 'Michael Finnagen, talent agent'"
+				print "It was definitly Micky but i hadn't seen him in years."
+				print "He'd been shot 3 times in the chest and was already past living."
+				print "I had no idea who could have shot him but couldn't ask him why he was blackmailing the lady in the red dress."
+				print "I knew then I'd never know why."
 				action = True
 				return "case cold"
 			else:
