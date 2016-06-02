@@ -26,16 +26,17 @@ Scene four: Crony encounter
 		Punch - Interrogation
 Scene five: Crony interrogation
 	Choice:
-		Good cop - case cold
+		Good cop - Dead
 		Bad cop - Moiderer encounter
 Scene six: Moiderer encounter
 	Choice:
-		Talk him down - Case closed
+		Talk him down - Dead
 		Shoot - Case closed
 		Punch - Dead
 
 
 Win state: Case closed
+- Boss encounter with Micky Fin, blackmailing her as she's rich and thought she was soft.
 
 Case Failure state: Case goes cold
 Encounter failer state: You sleep with the fishes

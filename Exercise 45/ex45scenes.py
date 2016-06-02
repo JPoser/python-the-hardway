@@ -22,7 +22,7 @@ class Office(Section):
 		print "I could have told her to get 'lost' now and buy another bottle\nor 'help' her and go after another scumbag despite hundreds of others ready to take his place."
 		action = False
 		while action == False:
-			response = raw_input("> ")
+			response = raw_input("\n> ")
 			if "help" in response:
 				print "I decided to help her on account of those unpaid bills."
 				print "'My costs are fifteen dollars a day' I told her"
@@ -33,7 +33,7 @@ class Office(Section):
 				print "'Your going to be making me work for my money tonight'"
 				print "I headed east on 45th with the remainders of my scotch and a .38 on a hunch and a prayer"
 				action = True
-				return "house"
+				return "murder"
 			elif "lost" in response:
 				print "'This isn't worth the heat it's going to draw me' I said not looking up from my papers."
 				print "'In my experience it's always best to just pay whoevers turning the screw on you'"
@@ -42,24 +42,25 @@ class Office(Section):
 				action = True
 				return "case cold"
 			else:
-				print "I need to decide if i'm going to 'help her' or tell her to 'get lost'"
+				print "That's not what I happened I either 'help her' or tell her to 'get lost'"
 				action = False
 
-class House(Section):
+class Murder(Section):
 	"""Section for the blackmailers house"""
 	def start(self):
-		print "I walked to the office block on the east side of the city."
+		print "\nI drove to the office block on the east side of the city."
 		print "The rain lashed my overcoat and soaked me through."
-		print "I stopped to pick up another bottle of scotch and a pack of ciggerates."
+		print "I stopped on the way to pick up another bottle of scotch and a pack of ciggerates."
 		print "As I walked through the empyty lobby I heard the repetative dull thuds of  gunshots echoing through concrete."
 		print "I ran to the elevator and thumped the button for the floor."
 		print "As the doors opened I saw a door kicked off it's hinges."
-		print "I cautiously walked into the room and found a body slouched over the desk. Blood was dripping off the desk onto the floor."
+		print "I cautiously walked into the room and found a body slouched over the desk."
+		print "Blood was dripping off the desk onto the floor."
 		print "Behind me I heard the quick thud of a man running down the hall and down the stairwell."
-		print "I could have lingered to 'look' for clues but I had a hunch I'd learn more by giving 'chase'\n and catching whoever was fleeing the scene and persuading him to tell me what he knew."
+		print "I could have lingered to 'look' for clues but I had a hunch I'd learn more by giving 'chase'\nand catching whoever was fleeing the scene and persuading him to tell me what he knew."
 		action = False
 		while action == False:
-			response = raw_input("> ")
+			response = raw_input("\n> ")
 			if "chase" in response:
 				print "I gave chase down the stairwell. I could hear the perp up aheads footsteps get faster."
 				print "At the bottom of the stairs I saw a man in a brown overcoat jump into a buick and drive away."
@@ -69,20 +70,36 @@ class House(Section):
 			elif "look" in response:
 				print "I decided that leaving a crime scene this fresh was a mistake."
 				print "A name badge on the table read 'Michael Finnagen, talent agent'"
-				print "It was definitly Micky but i hadn't seen him in years."
+				print "But the man on the desk wasn't Micky."
 				print "He'd been shot 3 times in the chest and was already past living."
-				print "I had no idea who could have shot him but couldn't ask him why he was blackmailing the lady in the red dress."
-				print "I knew then I'd never know why."
+				print "I had no idea who could have shot him but had a hunch that Micky didn't want to be found."
+				print "I knew then that I'd never find him."
 				action = True
 				return "case cold"
 			else:
-				print "That won't help do I 'chase' after the perp or look for clues?"
+				print "That won't help did I 'chase' after the perp or look for clues?"
 
 class Tail(Section):
 	"""Section for tailing the perp"""
 	def start(self):
-		print "On the tail"
-		return "crony"
+		print "\nIt was still raining as I drove away but I caught a glimpse of his taillights turning east towards Hollywood."
+		print "I followed and sat two cars back until we arrived at 64th bullevard."
+		print "He pulled over to the left hand lane and waited at the traffic lights."
+		print "I could have 'pulled up' along side him, or follow him thinking he'd turn 'left'"
+		action = False
+		while action == False:
+			response = raw_input("\n> ")
+			if "pulled up" in response:
+				print "I pulled alonside the buick"
+				action = True
+				return "case cold"
+			elif "left" in response:
+				print "I stayed behind him waiting to see what he did."
+				print "As he turned left I followed him."
+				action = True
+				return "crony"
+			else:
+				"That's not what happened, I could have 'pulled up' next to him or waited behind him to see if he turned 'left'"
 
 class Crony(Section):
 	"""Section for the first encounter with an armed Crony"""

@@ -6,7 +6,7 @@ import ex45scenes
 class SectionMap(object):
 	sections = {
 		"office" : ex45scenes.Office(),
-		"house" : ex45scenes.House(),
+		"murder" : ex45scenes.Murder(),
 		"tail" : ex45scenes.Tail(),
 		"crony" : ex45scenes.Crony(),
 		"interrogation" : ex45scenes.Interrogation(),
