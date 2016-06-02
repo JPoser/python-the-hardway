@@ -48,7 +48,8 @@ class Office(Section):
 class Murder(Section):
 	"""Section for the blackmailers house"""
 	def start(self):
-		print "\nI drove to the office block on the east side of the city."
+		print "\n"
+		print "I drove to the office block on the east side of the city."
 		print "The rain lashed my overcoat and soaked me through."
 		print "I stopped on the way to pick up another bottle of scotch and a pack of ciggerates."
 		print "As I walked through the empyty lobby I heard the repetative dull thuds of  gunshots echoing through concrete."
@@ -82,7 +83,9 @@ class Murder(Section):
 class Tail(Section):
 	"""Section for tailing the perp"""
 	def start(self):
-		print "\nIt was still raining as I drove away but I caught a glimpse of his taillights turning east towards Hollywood."
+		print "\n"
+		print "It was still raining as I drove away but I caught a glimpse of his taillights turning east towards Hollywood."
+		print "The canvas roof of my convertable "
 		print "I followed and sat two cars back until we arrived at 64th bullevard."
 		print "He pulled over to the left hand lane and waited at the traffic lights."
 		print "I could have 'pulled up' along side him, or follow him thinking he'd turn 'left'"
@@ -90,16 +93,29 @@ class Tail(Section):
 		while action == False:
 			response = raw_input("\n> ")
 			if "pulled up" in response:
-				print "I pulled alonside the buick"
+				print "I pulled alonside the buick and the driver glanced at me."
+				print "Before I could react the driver sped off in a cloud of smoke."
+				print "I was never going to catch him."
 				action = True
 				return "case cold"
 			elif "left" in response:
 				print "I stayed behind him waiting to see what he did."
 				print "As he turned left I followed him."
 				action = True
-				return "crony"
 			else:
 				"That's not what happened, I could have 'pulled up' next to him or waited behind him to see if he turned 'left'"
+		print "As I followed the car up into the Hollywood hills I saw the driver turn around."
+		print "He made a sudden wild turn cutting across traffic and into a road that I knew was a dead end."
+		print "I had to stay on his tail but if I attempted the same manouvre I could have ended up causing a major pile up."
+		print "I could either 'brake hard' and follow him or 'carry on' and turn around at the next set of of lights."
+		action = False
+		while action == False:
+			response = raw_input("\n> ")
+			if "brake hard" in response:
+				print "I broke hard and cut across on coming traffic."
+				print "I saw the buick parked in front of a derilict looking house further up the road."
+				print "Getting out of the car I pulled out my gun and headed towards the house."
+				return "crony"
 
 class Crony(Section):
 	"""Section for the first encounter with an armed Crony"""
