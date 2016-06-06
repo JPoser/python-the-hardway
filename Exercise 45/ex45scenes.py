@@ -20,7 +20,9 @@ class Office(Section):
 		print "'Someone to find out who's blackmailing me' she said."
 		print "She looked like trouble and lots of it."
 		print "I could have told her to get 'lost' now and buy another bottle\nor 'help' her and go after another scumbag despite hundreds of others ready to take his place."
+		
 		action = False
+		
 		while action == False:
 			response = raw_input("\n> ")
 			if "help" in response:
@@ -59,7 +61,9 @@ class Murder(Section):
 		print "Blood was dripping off the desk onto the floor."
 		print "Behind me I heard the quick thud of a man running down the hall and down the stairwell."
 		print "I could have lingered to 'look' for clues but I had a hunch I'd learn more by giving 'chase'\nand catching whoever was fleeing the scene and persuading him to tell me what he knew."
+		
 		action = False
+		
 		while action == False:
 			response = raw_input("\n> ")
 			if "chase" in response:
@@ -89,7 +93,9 @@ class Tail(Section):
 		print "I followed and sat two cars back until we arrived at 64th bullevard."
 		print "He pulled over to the left hand lane and waited at the traffic lights."
 		print "I could have 'pulled up' along side him, or follow him thinking he'd turn 'left'"
+		
 		action = False
+		
 		while action == False:
 			response = raw_input("\n> ")
 			if "pulled up" in response:
@@ -107,8 +113,10 @@ class Tail(Section):
 		print "As I followed the car up into the Hollywood hills I saw the driver turn around."
 		print "He made a sudden wild turn cutting across traffic and into a road that I knew was a dead end."
 		print "I had to stay on his tail but if I attempted the same manouvre I could have ended up causing a major pile up."
-		print "I could either 'brake hard' and follow him or 'carry on' and turn around at the next set of of lights."
+		print "I could either 'brake hard' and follow him or 'drive on' and turn around at the next set of of lights."
+		
 		action = False
+		
 		while action == False:
 			response = raw_input("\n> ")
 			if "brake hard" in response:
@@ -116,12 +124,51 @@ class Tail(Section):
 				print "I saw the buick parked in front of a derilict looking house further up the road."
 				print "Getting out of the car I pulled out my gun and headed towards the house."
 				return "crony"
+			elif "dive on" in response:
+				print "I couldn't cut across that much traffic without killing myself"
+				print "and anyone who hit me."
+				print "At the next set of lights I made a U turn" 
+				print "but by the time I got to the street the buick was no-where to be seen."
+				return "case cold"
+			else:
+				print "I didn't do that, I could have either 'brake hard' or 'drive on'"
 
 class Crony(Section):
 	"""Section for the first encounter with an armed Crony"""
 	def start(self):
-		print "Fighting the crony"
-		return "interrogation"
+		print "\n"
+		print "I crept around the back of the house and looked for an open window."
+		print "All but one was borded up but the one that wasn't was wide open."
+		print "I carefully climbed inside, gun in hand."
+		print "The creep was in the next room sat on the sofa pointing a his pistol at the door."
+		print "I had the drop on him and wanted to find out what he knew."
+		print "The gun was in my hand so I could 'shoot' him right now,"
+		print "attempt to 'talk' him down or sucker 'punch' him."
+		action = False
+		while action == False:
+			response = raw_input("\n> ")
+			if "shoot" in response:
+				print "I aimed at his arm to try and make him drop his weapon."
+				print "I squeezed the trigger."
+				print "He yelled and the gun dropped to the floor."
+				print "'Freeze punk!' I yelled."
+				print "He scowled and dived for the gun."
+				print "I shot him twice more."
+				print "He didn't get up."
+				print "Getting information out of him now would prove challenging."
+				return "case cold"
+			elif "talk" in response:
+				print "I calmly told him to 'drop the gun'."
+				print "That wasn't what he did."
+				print "He wheeled around a fired wildly."
+				print "I shot in response but we were both done for."
+				return "dead"
+			elif "punch" in response:
+				print "I lept at him at hit him squarly in the jaw."
+				print "He dropped the gun and I grabbed it."
+				print "Wheeling around I pointed my .38 at him."
+				print "'Start talking' I growled."
+				return "interrogation"
 		
 class Interrogation(Section):
 	"""Section where you interrogate the perp"""
