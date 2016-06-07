@@ -256,11 +256,12 @@ class Interrogation(Section):
 
 			elif "ask" in response and self.hitpoints == 2:
 				print "'Alright stop, I'll tell you' the murderer couged."
-				print "'He's hiding out in "
+				print "'He's hiding out in south bay, he runs a warehouse over there."
+				print "I cuffed him to a radiator, got in my car and set off for south bay."
 				return "murderer"
 
 			else:
-				print "I wouldn't have done that."
+				print "I wouldn't have done that. I could 'hit' him or 'ask' where Micky is."
 
 
 
