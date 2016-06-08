@@ -120,17 +120,25 @@ class Tail(Section):
 		action = False
 		
 		while action == False:
+
 			response = raw_input("\n> ")
+
 			if "pulled up" in response:
 				print "I pulled alonside the buick and the driver glanced at me."
 				print "Before I could react the driver sped off in a cloud of smoke."
 				print "I was never going to catch him."
+
 				action = True
+
 				return "case cold"
+
 			elif "left" in response:
+
 				print "I stayed behind him waiting to see what he did."
 				print "As he turned left I followed him."
+
 				action = True
+
 			else:
 
 				"That's not what happened, I could have 'pulled up' next to him or waited behind him to see if he turned 'left'"
@@ -194,7 +202,9 @@ class Crony(Section):
 				print "I shot him twice more."
 				print "He didn't get up."
 				print "Getting information out of him now would prove challenging."
+
 				action = True
+
 				return "case cold"
 
 			elif "talk" in response:
@@ -213,6 +223,7 @@ class Crony(Section):
 				print "He dropped the gun and I grabbed it."
 				print "Wheeling around I pointed my .38 at him."
 				print "'Start talking' I growled."
+
 				action = True
 
 				return "interrogation"
@@ -249,6 +260,7 @@ class Interrogation(Section):
 			elif "hit" in response and self.hitpoints == 1:
 				print "He collapsed"
 				self.assault()
+
 				return "case cold"
 
 			elif "ask" in response and self.hitpoints == 3:
@@ -258,6 +270,7 @@ class Interrogation(Section):
 				print "'Alright stop, I'll tell you' the murderer couged."
 				print "'He's hiding out in south bay, he runs a warehouse over there."
 				print "I cuffed him to a radiator, got in my car and set off for south bay."
+
 				return "murderer"
 
 			else:
@@ -271,7 +284,30 @@ class Interrogation(Section):
 class Murderer(Section):
 	"""Final Section where you encounter the Murderer"""
 	def start(self):
-		print "Fighting the murderer"
+		print "The warehouse looked unassuming but I knew the dock was hotbed of bootlegging."
+		print "I got in through a side entrance."
+		print "Inside the place was stacked high with crates of whiskey."
+		print "Whoever was running this racket must have been making a killing."
+		print "There was a rumble of thunder from the storm raging outside."
+		print "In the corner there was a staircase leading up to a small office jutting from the roof."
+		print "I headed towards the office when I felt the whistle of a bullet passing by my ear."
+		print "'Stop right there Dixon Hill!'"
+		print "I ducked behind a crate."
+		print "Another shot rang out and behind me one of the whiskey bottles exploded"
+		print "in a shower of glass and canadian whiskey."
+		print "I pulled out my .38 and thought I could 'rush' him, 'shoot' him or try and 'talk' him down"
+
+		action = False
+
+		while action == False:
+
+		response = raw_input("\n> ")
+
+			if "rush" in response:
+
+				print ""
+
+
 		return "case closed"
 
 class CaseClosed(Section):
