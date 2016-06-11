@@ -18,7 +18,8 @@ class Office(Section):
 		print "The rain was lashing down like hot lead bouncing off concrete."
 		print "I was looking busy flicking through old post, mostly unpaid bills, and had nearly run out of scotch."
 		print "'What are you looking for?' I asked."
-		print "'Someone to find out who's blackmailing me' she said."
+		print "'A shamus called Dixon Hill'"
+		print "'I need to find out who's blackmailing me' she said."
 		print "She looked like trouble and lots of it."
 		print "I could have told her to get 'lost' now and buy another bottle\nor 'help' her and go after another scumbag despite hundreds of others ready to take his place."
 		
@@ -305,8 +306,34 @@ class Murderer(Section):
 
 			if "rush" in response:
 
-				print ""
+				print "I ran out from behind my crate."
+				print "Two shots rang out."
+				print "It felt like a freight train had hit my chest."
+				print "I fell backwards."
 
+				action = True
+
+				return "dead"
+
+			elif: "shoot" in response:
+				print "I peared out from behind my hiding place."
+				print "I could see Micky standing in the open."
+				print "I ducked and made a mental note of where he was standing."
+				print "Standing up I shot 3 times."
+				print "Micky fell to the floor cluthing his chest."
+
+
+			elif: "talk" in response:
+				print "'Give it up Micky' I shouted across the warehouse floor."
+				print "'Killing me won't help you'"
+				print "'Maybe not.' he growled at me"
+				print "'But it will buy me some time'"
+				print "More shots echoed through the warehouse"
+				print "One burst through the crate I was hiding behind."
+
+				action = True
+
+				return "dead"
 
 		return "case closed"
 
