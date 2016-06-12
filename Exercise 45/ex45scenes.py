@@ -2,6 +2,8 @@
 # Written by Joe Poser
 # Classes for sections
 
+from random import randint
+
 class Section(object):
 	"""Section is the base class for each section of the adventure, 
 	it only contains the base function start which will be
@@ -302,7 +304,7 @@ class Murderer(Section):
 
 		while action == False:
 
-		response = raw_input("\n> ")
+			response = raw_input("\n> ")
 
 			if "rush" in response:
 
@@ -315,15 +317,17 @@ class Murderer(Section):
 
 				return "dead"
 
-			elif: "shoot" in response:
+			elif "shoot" in response:
 				print "I peared out from behind my hiding place."
 				print "I could see Micky standing in the open."
 				print "I ducked and made a mental note of where he was standing."
 				print "Standing up I shot 3 times."
 				print "Micky fell to the floor cluthing his chest."
 
+				action = True
 
-			elif: "talk" in response:
+
+			elif "talk" in response:
 				print "'Give it up Micky' I shouted across the warehouse floor."
 				print "'Killing me won't help you'"
 				print "'Maybe not.' he growled at me"
@@ -333,8 +337,23 @@ class Murderer(Section):
 
 				action = True
 
+			else:
+				print "That's not what happened."
+
 				return "dead"
 
+		print "I walked over to where he was laid out."
+		print "'Why Micky, you've clearly been making money?' I asked him."
+		print "He was in a bad way, and bleeding heavily from a bullet wound in his chest."
+		print "I kicked his gun away."
+		print "He looked at me with defeat in his eyes"
+		print "'I owe money to the mob for hire of this place and protection'"
+		print "'I thought the dame would be soft, I had no idea she'd hire a shamus like you'"
+		print "That's the way of this town, one asswhole screws one person who screws another chump who robs a scumbag."
+		print "Mickey would live, but he'd be in a cell for a few months."
+		print "What the mob would do to him when he got out wasn't my business."
+		print "The dame in my office would get away with just paying my fee."
+		print "And I'd get paid."
 		return "case closed"
 
 class CaseClosed(Section):
@@ -346,11 +365,15 @@ class CaseClosed(Section):
 class CaseCold(Section):
 	"""Survival failure state"""
 	def start(self):
-		print "The trail went cold"
+		fail_quotes = ["The trail went cold...", "I wasn't getting paid tonight...", "I was alive but the I hadn't fixed the Dame's problem...", "The blackmailers would get away this time..."]
+		semi_random_number = randint(0, 3)
+		print fail_quotes[semi_random_number]
 		exit(1)
 
 class Dead(Section):
 	"""Death failure state"""
 	def start(self):
-		print "you died"
+		dead_quotes = ["I would sleep with the fishes....", "I ended up six feet under", "I would wind up shot, so it goes..."]
+		semi_random_number = randint(0, 2)
+		print dead_quotes[semi_random_number]
 		exit(1)
