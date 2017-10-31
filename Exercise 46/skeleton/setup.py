@@ -1,6 +1,6 @@
 try:
-	from setuptools import setuptools
-except: ImportError:
+	from setuptools import setup
+except ImportError:
 	from distutils.core import setup
 
 config = {

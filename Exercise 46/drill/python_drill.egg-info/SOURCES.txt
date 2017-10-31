@@ -1,0 +1,9 @@
+setup.py
+bin/script.py
+drill/__init__.py
+drill/drill.py
+python_drill.egg-info/PKG-INFO
+python_drill.egg-info/SOURCES.txt
+python_drill.egg-info/dependency_links.txt
+python_drill.egg-info/requires.txt
+python_drill.egg-info/top_level.txt
