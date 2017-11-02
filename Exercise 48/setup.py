@@ -7,7 +7,7 @@ config = {
 	'description': 'ex48 course work',
 	'author': 'JPoser',
 	'url': 'https://github.com/JPoser/python-the-hardway',
-	'download_url': 'Where to download it',
+	'download_url': 'Whttps://github.com/JPoser/python-the-hardway',
 	'author_email': 'My email.',
 	'version': '0.1',
 	'install_requires': ['nose'],
